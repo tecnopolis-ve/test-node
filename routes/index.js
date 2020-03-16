@@ -8,6 +8,12 @@ router.get('/', (req, res, next) => {
     })
 });
 
+router.post('/', (req, res, next) => {
+    return mainController.main(req, res).then(x => {
+        res.json(x)
+    })
+});
+
 router.get('/ping', (req, res, next) => {
     return mainController.ping().then(x => {
         res.json(x)
